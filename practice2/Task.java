@@ -3,7 +3,7 @@ import java.util.Scanner;
 
 
 public class Task{
-    public  void main(String[] args) {
+    public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         int n = scanner.nextInt();
 
@@ -21,21 +21,21 @@ public class Task{
 
         scanner.close();
     }
-    public double task2_1(int n) {
+    public static double task2_1(int n) {
         double answer = 0;
         for (int i = 1; i <= n; i++) {
             answer += (double) 1 / i;
         }
         return answer;
     }
-    public long task2_2(int n) {
+    public static long task2_2(int n) {
         long answer = 1;
         for (int i = 1; i <= n; i++) {
             answer *= i;
         }
         return answer;
     }
-    public boolean task2_3(int n) {
+    public static boolean task2_3(int n) {
         while (n > 0) {
             int curr_digit = n % 10;
             if (curr_digit % 2 != 0) {
@@ -46,7 +46,7 @@ public class Task{
         }
         return false;
     }
-    public void printMean(int a, int b) {
+    public static void printMean(int a, int b) {
         double result1 = (double) (a + b) / 2;
         long ab = (long) a*b;
         double result2 = Math.sqrt(ab);
