@@ -49,26 +49,40 @@ public class Task4 {
         System.out.print("Выберите пункт: ");
     }
 
+    static double[] readParametres(Scanner scanner) {
+        double[] parametres = new double[2];
+
+        Double m = readDouble(scanner,"Введите массу тела в кг (> 0)", x -> x > 0);
+        Double v = readDouble(scanner, "Введите скорость тела в м/с (>= 0)", x -> x >= 0);
+        parametres[0] = m;
+        parametres[1] = v;
+        return parametres;
+
+    }
+
     static boolean calculate(Scanner scanner) {
-        Double m = readDouble(
-                scanner,
-                "Введите массу тела в кг (> 0)",
-                x -> x > 0
-        );
+        double[] parameters = readParameters(scanner);
 
-        Double v = readDouble(
-                scanner,
-                "Введите скорость тела в м/с (>= 0)",
-                x -> x >= 0
-        );
+        if (parameters == null) {
+            return false;
+        }
 
-        double energy = kineticEnergy(m, v);
-        System.out.println("Кинетическая энергия = " + energy + " Дж");
+        double energy = kineticEnergy(parameters);
+        printResult(parameters, energy);
         return true;
     }
 
-    static double kineticEnergy(double m, double v) {
-        return m * v * v / 2;
+    static double kineticEnergy(double[] parameters) {
+        double mass = parameters[0];
+        double speed = parameters[1];
+        return mass * speed * speed / 2;
     }
 
+    static void printResult(double[] parameters, double energy) {
+        System.out.println("Масса: " + parameters[0] + " кг");
+        System.out.println("Скорость: " + parameters[1] + " м/с");
+        System.out.println("Кинетическая энергия: " + energy + " Дж");
+    }
+
+    
 }
