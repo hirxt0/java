@@ -12,5 +12,7 @@ public class Task3 {
         } else if (b > a) {System.out.println("Большее число: " + b);
         } else {System.out.println("Числа равны");
         }
+        scanner.close();
+
     }
 }

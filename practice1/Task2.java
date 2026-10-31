@@ -10,5 +10,7 @@ public class Task2 {
         double y = 4 * Math.pow(x, 3) + 23 * x - 55;
 
         System.out.println("y = " + y);
+        scanner.close();
+
     }
 }
