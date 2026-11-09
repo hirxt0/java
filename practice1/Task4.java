@@ -5,7 +5,6 @@ import java.util.Scanner;
 import java.util.function.DoublePredicate;
 
 public class Task4 {
-
     
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
@@ -61,7 +60,7 @@ public class Task4 {
     }
 
     static boolean calculate(Scanner scanner) {
-        double[] parameters = readParameters(scanner);
+        double[] parameters = readParametres(scanner);
 
         if (parameters == null) {
             return false;
